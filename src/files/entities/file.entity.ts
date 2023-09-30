@@ -28,7 +28,7 @@ export class FileEntity {
   mimeType: string;
 
   @ManyToOne(() => UserEntity, (user) => user.files)
-  users: UserEntity;
+  user: UserEntity;
   @DeleteDateColumn() //позволяет сохранять историю изменений и восстанавливать удаленные данные при необходимости.
   deletedAt?: Date; //хранит дату удаления записи
 }
