@@ -9,7 +9,9 @@ import { FileEntity } from './files/entities/file.entity';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
+  //декоратор, который обозначает, что это модуль. Модуль внутри принимает объект, внутри объекта есть свойства
   imports: [
+    //первое свойство объекта(тут то, что модуль импортирует в себя)
     ConfigModule.forRoot(),
     UsersModule,
     TypeOrmModule.forRoot({
@@ -24,7 +26,7 @@ import { ConfigModule } from '@nestjs/config';
     }),
     FilesModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController], //второе свойство объекта. Сюда подключаются все контроллеры
+  providers: [AppService], //третье свойство объекта. Сюда подключаются все сервисы, реппоизтории
 })
 export class AppModule {}
