@@ -19,7 +19,6 @@ export class UsersController {
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
-    //метод create в ответ на Post-запрос клиента(о регистрации)
     return this.usersService.create(createUserDto);
   }
 

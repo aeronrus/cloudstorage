@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserEntity } from './users/entities/user.entity';
 import { FileEntity } from './files/entities/file.entity';
 import { ConfigModule } from '@nestjs/config';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   //декоратор, который обозначает, что это модуль. Модуль внутри принимает объект, внутри объекта есть свойства
@@ -25,6 +26,7 @@ import { ConfigModule } from '@nestjs/config';
       synchronize: true,
     }),
     FilesModule,
+    AuthModule,
   ],
   controllers: [AppController], //второе свойство объекта. Сюда подключаются все контроллеры
   providers: [AppService], //третье свойство объекта. Сюда подключаются все сервисы, реппоизтории
